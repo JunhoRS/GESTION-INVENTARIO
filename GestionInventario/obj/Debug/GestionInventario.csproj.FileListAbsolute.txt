@@ -1,0 +1,14 @@
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\bin\Debug\GestionInventario.exe.config
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\bin\Debug\GestionInventario.exe
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\bin\Debug\GestionInventario.pdb
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.csproj.AssemblyReference.cache
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.csproj.SuggestedBindingRedirects.cache
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.Inicio.resources
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.login.resources
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.Properties.Resources.resources
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.csproj.GenerateResource.cache
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.csproj.CoreCompileInputs.cache
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.csproj.CopyComplete
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.exe
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.pdb

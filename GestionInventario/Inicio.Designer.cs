@@ -34,8 +34,8 @@
             this.menuventas = new FontAwesome.Sharp.IconMenuItem();
             this.menucompras = new FontAwesome.Sharp.IconMenuItem();
             this.menuclientes = new FontAwesome.Sharp.IconMenuItem();
-            this.menuproveedores = new FontAwesome.Sharp.IconMenuItem();
             this.menureportes = new FontAwesome.Sharp.IconMenuItem();
+            this.menuproveedores = new FontAwesome.Sharp.IconMenuItem();
             this.menuacercade = new FontAwesome.Sharp.IconMenuItem();
             this.menuTitulo = new System.Windows.Forms.MenuStrip();
             this.tituloSistema = new System.Windows.Forms.Label();
@@ -125,18 +125,6 @@
             this.menuclientes.Size = new System.Drawing.Size(132, 34);
             this.menuclientes.Text = "CLIENTES";
             // 
-            // menuproveedores
-            // 
-            this.menuproveedores.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.menuproveedores.IconChar = FontAwesome.Sharp.IconChar.TruckField;
-            this.menuproveedores.IconColor = System.Drawing.Color.Black;
-            this.menuproveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuproveedores.IconSize = 30;
-            this.menuproveedores.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.menuproveedores.Name = "menuproveedores";
-            this.menuproveedores.Size = new System.Drawing.Size(132, 34);
-            this.menuproveedores.Text = "PROVEEDORES";
-            // 
             // menureportes
             // 
             this.menureportes.BackColor = System.Drawing.Color.PaleTurquoise;
@@ -148,6 +136,18 @@
             this.menureportes.Name = "menureportes";
             this.menureportes.Size = new System.Drawing.Size(132, 34);
             this.menureportes.Text = "REPORTES";
+            // 
+            // menuproveedores
+            // 
+            this.menuproveedores.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.menuproveedores.IconChar = FontAwesome.Sharp.IconChar.TruckField;
+            this.menuproveedores.IconColor = System.Drawing.Color.Black;
+            this.menuproveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuproveedores.IconSize = 30;
+            this.menuproveedores.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuproveedores.Name = "menuproveedores";
+            this.menuproveedores.Size = new System.Drawing.Size(132, 34);
+            this.menuproveedores.Text = "PROVEEDORES";
             // 
             // menuacercade
             // 
@@ -168,7 +168,7 @@
             this.menuTitulo.Location = new System.Drawing.Point(0, 0);
             this.menuTitulo.Name = "menuTitulo";
             this.menuTitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuTitulo.Size = new System.Drawing.Size(678, 49);
+            this.menuTitulo.Size = new System.Drawing.Size(1125, 49);
             this.menuTitulo.TabIndex = 1;
             this.menuTitulo.Text = "menuTitulo";
             // 
@@ -190,20 +190,21 @@
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedor.Location = new System.Drawing.Point(139, 49);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(539, 498);
+            this.contenedor.Size = new System.Drawing.Size(986, 498);
             this.contenedor.TabIndex = 3;
             // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 547);
+            this.ClientSize = new System.Drawing.Size(1125, 547);
             this.Controls.Add(this.contenedor);
             this.Controls.Add(this.tituloSistema);
             this.Controls.Add(this.menu);
             this.Controls.Add(this.menuTitulo);
             this.MainMenuStrip = this.menu;
             this.Name = "Inicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
