@@ -137,3 +137,12 @@ FechaRegistro datetime default getdate()
 
 go
 
+select * from USUARIO
+select * from rol
+
+insert into rol (Descripcion)
+values ('ADMINISTRADOR')
+
+
+insert USUARIO(Documento,NombreCompleto,Correo,Contrasena,IdRol,Estado)
+values('20210203','ADMIN','20210203@itla.edu.do','0203','1','1')

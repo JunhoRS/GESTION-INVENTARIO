@@ -1,0 +1,9 @@
+C:\Users\Junho\Desktop\Programs\GestionInventario\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Junho\Desktop\Programs\GestionInventario\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Junho\Desktop\Programs\GestionInventario\CapaDatos\bin\Debug\CapaEntidad.dll
+C:\Users\Junho\Desktop\Programs\GestionInventario\CapaDatos\bin\Debug\CapaEntidad.pdb
+C:\Users\Junho\Desktop\Programs\GestionInventario\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\Junho\Desktop\Programs\GestionInventario\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Junho\Desktop\Programs\GestionInventario\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Users\Junho\Desktop\Programs\GestionInventario\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Junho\Desktop\Programs\GestionInventario\CapaDatos\obj\Debug\CapaDatos.pdb

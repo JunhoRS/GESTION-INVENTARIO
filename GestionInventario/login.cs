@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using CapaNegocio;
+using CapaEntidad;
+
 namespace GestionInventario
 {
     public partial class login : Form
@@ -19,12 +22,25 @@ namespace GestionInventario
 
         private void btningresar_Click(object sender, EventArgs e)
         {
-            Inicio form = new Inicio();
+            List<Usuario> TEST = new CN_Usuario().Listar();
 
-            form.Show();
-            this.Hide();
+            Usuario ousuario = new CN_Usuario().Listar().Where(u => u.Documento == txtdocumento.Text && u.Contrasena == txtcontrasena.Text).FirstOrDefault();
 
-            form.FormClosing += frm_closing;
+            if (ousuario != null)
+            {
+
+                Inicio form = new Inicio();
+
+                form.Show();
+                this.Hide();
+
+                form.FormClosing += frm_closing;
+
+            }
+            else
+            {
+                MessageBox.Show("No se encontro el usuario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void frm_closing(object sender, FormClosingEventArgs e)

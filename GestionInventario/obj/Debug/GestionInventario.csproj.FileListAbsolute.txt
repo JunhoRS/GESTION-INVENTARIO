@@ -12,3 +12,9 @@ C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\Ge
 C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.csproj.CopyComplete
 C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.exe
 C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.pdb
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\bin\Debug\CapaEntidad.dll
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\bin\Debug\CapaNegocio.dll
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\bin\Debug\CapaDatos.dll
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\bin\Debug\CapaEntidad.pdb
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\bin\Debug\CapaNegocio.pdb
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\bin\Debug\CapaDatos.pdb
