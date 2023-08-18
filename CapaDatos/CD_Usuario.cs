@@ -16,16 +16,16 @@ namespace CapaDatos
         {
             List<Usuario> Lista = new List<Usuario>();
 
-            using (SqlConnection oConexion = new SqlConnection(Conexion.cadena))
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
             {
                 try
                 {
-                    string query = "elect IdUsuario,Documento,NombreCompleto,Correo,Contrasena,Estado from usuario";
+                    string query = "select IdUsuario,Documento,NombreCompleto,Correo,Contrasena,Estado from usuario";
 
-                    SqlCommand cmd = new SqlCommand(query, oConexion);
+                    SqlCommand cmd = new SqlCommand(query, oconexion);
                     cmd.CommandType = CommandType.Text;
 
-                    oConexion.Open();
+                    oconexion.Open();
 
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {

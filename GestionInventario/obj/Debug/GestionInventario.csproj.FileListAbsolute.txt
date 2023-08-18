@@ -18,3 +18,11 @@ C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\bin\Debug\Ca
 C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\bin\Debug\CapaEntidad.pdb
 C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\bin\Debug\CapaNegocio.pdb
 C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\bin\Debug\CapaDatos.pdb
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.frmCategoria.resources
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.frmClientes.resources
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.frmCompras.resources
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.frmProducto.resources
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.frmProveedores.resources
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.frmReportes.resources
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.frmUsuarios.resources
+C:\Users\Junho\Desktop\Programs\GestionInventario\GestionInventario\obj\Debug\GestionInventario.frmVentas.resources

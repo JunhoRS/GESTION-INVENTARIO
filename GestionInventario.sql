@@ -54,10 +54,10 @@ NombreCompleto varchar(50),
 Correo varchar(50),
 Contrasena varchar(50),
 IdRol int references ROL(IdRol),
-Telefono varchar(50),
 Estado bit,
 FechaRegistro datetime default getdate()
 )
+
 
 go
 
@@ -146,3 +146,47 @@ values ('ADMINISTRADOR')
 
 insert USUARIO(Documento,NombreCompleto,Correo,Contrasena,IdRol,Estado)
 values('20210203','ADMIN','20210203@itla.edu.do','0203','1','1')
+
+DROP TABLE USUARIO;
+
+-- Eliminar registros en la tabla USUARIO
+DELETE FROM USUARIO;
+
+-- Si deseas resetear el contador de identidad de la columna IdUsuario
+DBCC CHECKIDENT ('USUARIO', RESEED, 0);
+
+-- Eliminar registros en la tabla ROL
+DELETE FROM ROL;
+
+-- Si deseas resetear el contador de identidad de la columna IdRol
+DBCC CHECKIDENT ('ROL', RESEED, 0);
+
+-- Eliminar la columna Telefono de la tabla USUARIO
+ALTER TABLE USUARIO
+DROP COLUMN Telefono;
+
+select * from PERMISO
+
+insert into PERMISO(IdRol,NombreMenu) values
+(1,'menuusuario'),
+(1,'menumantenedor'),
+(1,'menuventas'),
+(1,'menucompras'),
+(1,'menuclientes'),
+(1,'menuproveedores'),
+(1,'menureportes'),
+(1,'menuacercade')
+
+
+select * from PERMISO
+select * from ROL
+
+insert into rol (Descripcion)
+values ('EMPLEADO')
+
+insert into PERMISO(IdRol,NombreMenu) values
+(2,'menuventas'),
+(2,'menucompras'),
+(2,'menuclientes'),
+(2,'menuproveedores'),
+(2,'menuacercade')
