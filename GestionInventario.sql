@@ -177,7 +177,7 @@ insert into PERMISO(IdRol,NombreMenu) values
 (1,'menureportes'),
 (1,'menuacercade')
 
-
+select * from USUARIO
 select * from PERMISO
 select * from ROL
 
@@ -190,3 +190,12 @@ insert into PERMISO(IdRol,NombreMenu) values
 (2,'menuclientes'),
 (2,'menuproveedores'),
 (2,'menuacercade')
+
+select p.IdRol,p.NombreMenu from PERMISO p
+inner join ROL r on r.IdRol = p.IdRol
+inner join USUARIO u on u.IdRol = r.IdRol
+where u.IdUsuario = 1
+
+
+insert USUARIO(Documento,NombreCompleto,Correo,Contrasena,IdRol,Estado)
+values('10','EMPLEADO','@gmil.com','10','2','1')
