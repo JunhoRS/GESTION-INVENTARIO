@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using CapaEntidad;
+using System.Reflection;
 
 namespace CapaDatos
 {
@@ -20,9 +21,11 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "select IdUsuario,Documento,NombreCompleto,Correo,Contrasena,Estado from usuario";
-
-                    SqlCommand cmd = new SqlCommand(query, oconexion);
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("select u.IdUsuario,u.Documento,u.NombreCompleto,u.Correo,u.Contrasena,u.Estado, r.IdRol, r.Descripcion from usuario u");
+                    query.AppendLine("inner join rol r on r.IdRol = u.IdRol");
+                    
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
 
                     oconexion.Open();
@@ -38,7 +41,8 @@ namespace CapaDatos
                                 NombreCompleto = dr["NombreCompleto"].ToString(),
                                 Correo = dr["Correo"].ToString(),
                                 Contrasena = dr["Contrasena"].ToString(),
-                                Estado = Convert.ToBoolean(dr["Estado"])
+                                Estado = Convert.ToBoolean(dr["Estado"]),
+                                oRol = new rol() { idRol = Convert.ToInt32(dr["IdRol"]) , Descripcion = dr["Descripcion"].ToString() }
 
                             });
                         }

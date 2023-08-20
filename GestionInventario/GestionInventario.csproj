@@ -166,6 +166,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -190,6 +191,18 @@
       <Project>{6ad9ae3e-e921-4d9d-a6d6-db6426a45834}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3687412.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-green-check-mark-icon-flat-style-png-image_5253210.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check20.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check20.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
