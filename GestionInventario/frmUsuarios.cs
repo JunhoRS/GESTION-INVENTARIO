@@ -250,6 +250,7 @@ namespace GestionInventario
                     if (respuesta)
                     {
                         dgvdata.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
+                        Limpiar();
                     }
                     else
                     {
@@ -289,6 +290,10 @@ namespace GestionInventario
                 row.Visible = true;
             }
         }
-    
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
     }
 }

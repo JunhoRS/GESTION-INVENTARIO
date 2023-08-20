@@ -70,7 +70,8 @@ FechaRegistro datetime default getdate()
 
 go
 
-create table PRODUCTO(
+alter table PRODUCTO
+(
 IdProducto int primary key identity,
 Codigo varchar(50),
 Nombre varchar(50),
@@ -392,3 +393,105 @@ SELECT * FROM CATEGORIA
 INSERT INTO CATEGORIA(Descripcion,Estado)VALUES('ELECTRONICA',1)
 INSERT INTO CATEGORIA(Descripcion,Estado)VALUES('COMIDA',1)
 INSERT INTO CATEGORIA(Descripcion,Estado)VALUES('LIMPIEZA',1)
+
+
+
+
+--PROCEDIMIENTOS PARA LOS PRODUCTOS
+
+create PROC SP_RegistrarProducto(
+@Codigo varchar (20),
+@Nombre varchar (30),
+@Descripcion varchar (30),
+@IdCategoria int,
+@Estado bit,
+@Resultado int output,
+@Mensaje varchar (500) output
+)as
+begin
+	SET @Resultado = 0
+	IF NOT EXISTS (SELECT * from PRODUCTO WHERE Codigo = @Codigo)
+	BEGIN
+		insert into PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado) values (@Codigo,@Nombre,@Descripcion,@IdCategoria,@Estado)
+		set @Resultado = SCOPE_IDENTITY()
+	END
+	ELSE
+		SET @Mensaje = 'Ya existe un producto con el mismo codigo'
+end
+
+
+create PROC SP_ModificarProducto(
+@IdProducto int,
+@Codigo varchar (20),
+@Nombre varchar (30),
+@Descripcion varchar (30),
+@IdCategoria int,
+@Estado bit,
+@Resultado bit output,
+@Mensaje varchar (500) output
+)as
+begin
+	SET @Resultado = 1
+	IF NOT EXISTS (SELECT * from PRODUCTO WHERE Codigo = @Codigo and IdProducto != @IdProducto)
+		update PRODUCTO set
+		Codigo = @Codigo,
+		Nombre = @Nombre,
+		Descripcion = @Descripcion,
+		IdCategoria = @IdCategoria,
+		Estado = @Estado
+		where IdProducto = @IdProducto
+	ELSE
+	begin
+		SET @Resultado = 0
+		SET @Mensaje = 'Ya existe un producto con el mismo codigo'
+	end
+end
+
+create PROC SP_EliminarProducto(
+@IdProducto int,
+@Resultado bit output,
+@Mensaje varchar (500) output
+)as
+begin
+	SET @Resultado = 0
+	SET @Mensaje = ''
+	declare @pasoreglas bit = 0
+
+	IF NOT EXISTS (SELECT * from DETALLE_COMPRA dc
+	inner join PRODUCTO p on p.IdProducto = dc.IdProducto
+	where p.IdProducto = @IdProducto
+	)
+	BEGIN
+		set @pasoreglas = 0
+		SET @Resultado = 0
+		SET @Mensaje = @Mensaje + 'No se puede eliminar porque se encuentra relacionada a una compra\n'
+		
+	END
+
+	if exists (select * from DETALLE_VENTA dv
+	INNER JOIN PRODUCTO p ON p.IdProducto = dv.IdProducto
+	WHERE p.IdProducto = @IdProducto
+	)
+	BEGIN
+		set @pasoreglas = 0
+		SET @Resultado = 0
+		SET @Mensaje = @Mensaje + 'No se puede eliminar porque se encuentra relacionada a una VENTA\n'		
+	END
+
+	IF(@pasoreglas = 1)
+	begin
+		delete from PRODUCTO where IdProducto = @IdProducto
+		set @Resultado = 1
+	end
+end
+
+
+select IdProducto,Codigo,Nombre,p.Descripcion,c.IdCategoria,c.Descripcion[DescripcionCategoria], Stock, PrecioCompra, PrecioVenta from PRODUCTO p
+inner join CATEGORIA c on c.IdCategoria = p.IdCategoria
+
+
+SELECT * FROM PRODUCTO
+
+INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)VALUES('101010','gaseosa','1litro',5,1)
+INSERT INTO PRODUCTO(Descripcion,Estado)VALUES('COMIDA',1)
+INSERT INTO PRODUCTO(Descripcion,Estado)VALUES('LIMPIEZA',1)
