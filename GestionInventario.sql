@@ -320,3 +320,75 @@ begin
 	end
 
 end
+
+--CATEGORIAS Y PRODUCTOS PROCEDIMIENTOS
+
+alter PROC SP_RegistrarCategoria(
+@Descripcion varchar (50),
+@Estado bit,
+@Resultado int output,
+@Mensaje varchar (500) output
+)as
+begin
+	SET @Resultado = 0
+	IF NOT EXISTS (SELECT * from CATEGORIA WHERE Descripcion = @Descripcion)
+	BEGIN
+		insert into CATEGORIA(Descripcion,Estado) values (@Descripcion,@Estado)
+		set @Resultado = SCOPE_IDENTITY()
+	END
+	ELSE
+		SET @Mensaje = 'No se puede repetir la descripcion de una categoria'
+end
+
+--CATEGORIAS Y PRODUCTOS PROCEDIMIENTOS MODIFICACIONES	
+
+alter PROC SP_EditarCategoria(
+@IdCategoria int,
+@Descripcion varchar (50),
+@Estado bit,
+@Resultado bit output,
+@Mensaje varchar (500) output
+)as
+begin
+	SET @Resultado = 1
+	IF NOT EXISTS (SELECT * from CATEGORIA WHERE Descripcion = @Descripcion and IdCategoria != @IdCategoria)
+		
+		update CATEGORIA set
+		Descripcion = @Descripcion,
+		Estado = @Estado
+		where IdCategoria = @IdCategoria
+	ELSE
+	begin
+		set @Resultado = 0
+		SET @Mensaje = 'No se puede repetir la descripcion de una categoria'
+		end
+end
+
+
+CREATE PROC SP_EliminarCategoria(
+@IdCategoria int,
+@Resultado bit output,
+@Mensaje varchar (500) output
+)as
+begin
+	SET @Resultado = 1
+	IF NOT EXISTS (
+	select * from CATEGORIA c
+	inner join PRODUCTO p on p.IdCategoria = c.IdCategoria
+	where c.IdCategoria = @IdCategoria
+	)
+	begin
+		delete top(1) from CATEGORIA where IdCategoria = @IdCategoria
+	end
+	ELSE
+	begin
+		set @Resultado = 0
+		SET @Mensaje = 'Categoria ya relacionada a un producto'
+	end
+end
+
+SELECT * FROM CATEGORIA
+
+INSERT INTO CATEGORIA(Descripcion,Estado)VALUES('ELECTRONICA',1)
+INSERT INTO CATEGORIA(Descripcion,Estado)VALUES('COMIDA',1)
+INSERT INTO CATEGORIA(Descripcion,Estado)VALUES('LIMPIEZA',1)
