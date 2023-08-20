@@ -97,14 +97,40 @@ namespace GestionInventario
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-        //    dgvdata.Rows.Add(new object[] { "", txtid.Text, txtdocumento.Text, txtnombrecompleto.Text, txtcorreo.Text, txtcontrasena.Text,
-        //        ((OpcionCombo)cborol.SelectedItem).Valor.ToString(),
-        //        ((OpcionCombo)cborol.SelectedItem).Texto.ToString(),
-        //        ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
-        //        ((OpcionCombo)cboestado.SelectedItem).Texto.ToString(),
-        //    });
-        //
-        //    Limpiar();
+            string mensaje = string.Empty;
+
+            Usuario objusuario = new Usuario()
+            {
+                IdUsuario = Convert.ToInt32(txtid.Text),
+                Documento = txtdocumento.Text,
+                NombreCompleto = txtnombrecompleto.Text,
+                Correo = txtcorreo.Text,
+                Contrasena = txtcontrasena.Text,
+                oRol = new rol()
+                {
+                    idRol = Convert.ToInt32(((OpcionCombo)cborol.SelectedItem).Valor)
+                },
+                Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
+            };
+
+            int idusuariogenerado = new CN_Usuario().Registrar(objusuario, out mensaje);
+
+            if(idusuariogenerado != 0 )
+            {
+                dgvdata.Rows.Add(new object[] { "", idusuariogenerado, txtdocumento.Text, txtnombrecompleto.Text, txtcorreo.Text, txtcontrasena.Text,
+                ((OpcionCombo)cborol.SelectedItem).Valor.ToString(),
+                ((OpcionCombo)cborol.SelectedItem).Texto.ToString(),
+                ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
+                ((OpcionCombo)cboestado.SelectedItem).Texto.ToString(),
+                });
+
+
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show(mensaje);
+            }
         }
 
         private void Limpiar()
